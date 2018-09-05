@@ -1,0 +1,54 @@
+/* 
+==============================================
+ERIN MILLER - VUE FINAL PROJECT
+==============================================
+*/
+
+@import 'reset';
+@font-face { font-family: CS Sandreas; src: url('CS-Sandreas-Outline.otf'); } 
+@font-face { font-family: Mango Chutney; src: url('Mango-Chutney.otf'); } 
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #ccc;
+}
+
+.title {
+	text-align: center;
+	font-family: CS Sandreas;
+	animation: blinker 2s linear infinite;
+	font-size: 5em;
+}
+  
+@keyframes blinker {
+50% {
+	opacity: 1;
+}
+50% {
+	opacity: 0;
+}
+75% {
+	opacity: 1;
+	}
+}
+
+p {
+	font-family: Mango Chutney;
+	padding: 10px 10px 10px 10px;
+}
+
+a {
+	text-decoration: none;
+	font-family: Mango Chutney;
+}
+
+h1{
+	padding-top: 20px;
+	font-size: 35px;
+	color:black;
+}
+/* phone view */
+
