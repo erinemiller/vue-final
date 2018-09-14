@@ -2,7 +2,8 @@ let SearchGifComponent = Vue.component('searchgif', {
     data: function () {
         return {
             searchText: '',
-            gifData: null       
+            gifData: null,
+            giphyURL: '',      
         }
     },
     
@@ -16,7 +17,7 @@ let SearchGifComponent = Vue.component('searchgif', {
     methods: {
         gifSearch: function(searchText){
             axios
-                .get('https://api.giphy.com/v1/gifs/search?api_key=B4PzECN4osdlqLZSB7c8yvPFuYYVqzrM&q=mario&limit=25&offset=0&rating=G&lang=en')
+                .get("https://api.giphy.com/v1/gifs/search?q=" + this.searchText + "&limit=25&offset=0&rating=G&lang=en" + "&api_key=B4PzECN4osdlqLZSB7c8yvPFuYYVqzrM")
                 .then((response) => {
                     console.log(response);
                     this.gifData = response.data.data;                   
@@ -25,11 +26,13 @@ let SearchGifComponent = Vue.component('searchgif', {
                     console.warn(error);
                 });
           },
-          submitGiphy: function(giphyURL) {
-			console.log('submitGiphy');
-            this.$emit('submittedgiphy', giphyURL);
+          submitGif: function(giphyURL) {
+			console.log('submit gif');
+			this.$emit('submittedgif', giphyURL);
+        }
         
-          }
+        
+          
     },
 
 
@@ -48,7 +51,9 @@ let SearchGifComponent = Vue.component('searchgif', {
                 
                 <ul class="giphys">
                     <li v-for="giphy in gifData">
-                         <img @click="gifSearch(giphy.images.original.url)"  v-bind:src="giphy.images.original.url">
+                    <router-link to="/votegif">
+                         <img @click="gifSearch(giphy.images.original.url)" alt="" v-bind:src="giphy.images.original.url" link-to="/votegif">
+                    </router-link>
                     </li>
                 </ul>
 

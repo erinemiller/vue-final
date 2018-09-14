@@ -16,8 +16,6 @@ var router = new VueRouter({
 	}]
 });
 
-// const API_URL = 'http://circuslabs.net:6432/'
-
 var app = new Vue({
 	el: '#router-app',
 	router: router,
@@ -45,7 +43,7 @@ var app = new Vue({
 		getStatus: function getStatus(status) {
 			var _this = this;
 
-			console.log(this);
+			// console.log(this)
 			axios.get('http://circuslabs.net:6432/status').then(function (response) {
 				// needs to be an arrow function, so that *this* is still the Vue instance
 				_this.status = response.data;
