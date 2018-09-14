@@ -57,13 +57,13 @@ let SearchGifComponent = Vue.component('searchgif', {
                     </li>
                 </ul>
 
-                <div class ="btn-container"><router-link tag="button" to="/votegif"><a>SUBMIT</a></router-link>
+               
                   
                 </div> </p>
                 
             </div>
         `
   //has to be wrapped in single element, even if its just a div
-  
+  // <div class ="btn-container"><router-link tag="button" to="/votegif"><a>SUBMIT</a></router-link>
 })
 
