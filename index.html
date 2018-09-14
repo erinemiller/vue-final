@@ -12,7 +12,10 @@
 
 	<body>
 		<div id="router-app">
-			<router-view :username="username" v-on:loggedin="loggedIn"></router-view>
+			<router-view 
+					:username="username" 
+					:status="status" 
+					v-on:loggedin="loggedIn"></router-view>
 		</div>
 	
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -20,7 +23,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 		<script src="dist/js/HomeComponent.js"></script>
 		<script src="dist/js/SearchGifComponent.js"></script>
-		<script src="dist/js/SubmitGifComponent.js"></script>
+		<script src="dist/js/VoteGifComponent.js"></script>
 		<script src="dist/js/WinnerComponent.js"></script>
 		<script src="dist/js/app.js"></script>
 

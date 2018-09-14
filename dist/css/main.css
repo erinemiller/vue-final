@@ -7,6 +7,7 @@ ERIN MILLER - VUE FINAL PROJECT
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -62,24 +63,19 @@ table {
 	src: url("CS-Sandreas-Outline.otf");
 }
 
-@font-face {
-	font-family: Mango Chutney;
-	src: url("Mango-Chutney.otf");
-}
-
 * {
 	box-sizing: border-box;
 }
 
 body {
-	background: #ccc;
+	background: white;
 }
 
 .title {
 	text-align: center;
 	font-family: CS Sandreas;
 	animation: blinker 2s linear infinite;
-	font-size: 5em;
+	font-size: 4em;
 }
 
 @keyframes blinker {
@@ -95,19 +91,70 @@ body {
 }
 
 p {
-	font-family: Mango Chutney;
-	padding: 10px 10px 10px 10px;
+	font-family: 'Raleway', sans-serif;
+	padding: 30px 10px 10px 10px;
+	width: 100vw;
+	text-align: center;
 }
 
 a {
 	text-decoration: none;
-	font-family: Mango Chutney;
+	font-family: 'Raleway', sans-serif;
 }
 
 h1 {
 	padding-top: 20px;
 	font-size: 35px;
 	color: black;
+}
+
+label {
+	display: flex;
+	justify-content: center;
+}
+
+input {
+	background: white;
+	width: 50%;
+	padding-top: 10px;
+	margin: 0px 0;
+	border: none;
+	border-bottom: 2px solid #8ae5d5;
+}
+
+.btn-container {
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	flex-wrap: wrap;
+	width: 50vw;
+	padding-top: 20px;
+}
+
+button {
+	font-family: 'Raleway', sans-serif;
+	flex: 1 1 auto;
+	margin: 10px;
+	padding: 15px 15px;
+	text-align: center;
+	text-transform: uppercase;
+	transition: 0.5s;
+	background-size: 200% auto;
+	border: 1px solid black;
+	color: black;
+	box-shadow: 0 0 20px #eee;
+	border-radius: 2px;
+}
+
+button:hover {
+	background-position: right center;
+	/* change the direction of the change here */
+}
+
+button {
+	background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
 }
 
 /* phone view */

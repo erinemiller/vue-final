@@ -10,13 +10,10 @@ let HomeComponent = Vue.component('home', {
             this.$emit('loggedin', username);
         }
     },
-    methods: {
-    },
     template: 
         `<div>
 
-            <div class="title">GIPHY</div>
-            <div class="title">BATTLE</div>
+            <div class="title">GIPHYBATTLE</div>
             <p>
                 Watch the game screen to see the subject,then choose a Giphy to match it in the funniest, sickest, awesomest, or silliest way possible.
             </p>
@@ -24,8 +21,8 @@ let HomeComponent = Vue.component('home', {
                 Then vote on which Giphys are the best. After each round, the winner is the Giphy with the most votes.
             </p>
             <p>
-                Choose Username: <label><input v-model="username"></label>
-                <router-link tag="button" to="/searchgif">Submit</router-link>
+                <br><label><input placeholder="choose your username"v-model="username"></label>
+                <div class ="btn-container"><router-link tag="button" to="/searchgif">Lets Play!</router-link></div>
             </p>
         
         </div>`
