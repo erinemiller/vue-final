@@ -58,7 +58,7 @@ var app = new Vue({
 			axios
 			.post('http://circuslabs.net:6432/submission', {giphyURL: giphyURL, username: this.username})
 			.then((response) => {
-				console.log('gif here');
+				console.log('response');
 			})
 			.catch(function (error) {
 				console.log('error');

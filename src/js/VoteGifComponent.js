@@ -16,7 +16,7 @@ let VoteGifComponent = Vue.component('votegif', {
             <p>Vote</p>
             <p>Vote for the funniest, sickest, awesomest, or silliest giphy that matches this subject:<p>
             <p> {{ status.question }}</p>
-            <p>You have __ seconds to vote! </p>
+            <p> You have {{Math.round(status.timeLeftInPhase/1000)}} </p>
             <p>Submissions</p>
 
         </div>

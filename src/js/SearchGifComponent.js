@@ -16,6 +16,7 @@ let SearchGifComponent = Vue.component('searchgif', {
      
     methods: {
         gifSearch: function(searchText){
+            this.giphys = [];
             axios
                 .get("https://api.giphy.com/v1/gifs/search?q=" + this.searchText + "&limit=25&offset=0&rating=G&lang=en" + "&api_key=B4PzECN4osdlqLZSB7c8yvPFuYYVqzrM")
                 .then((response) => {
