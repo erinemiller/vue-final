@@ -58,6 +58,7 @@ var app = new Vue({
 			.post('http://circuslabs.net:6432/submission', {giphyURL: giphyURL, username: this.username})
 			.then((response) => {
 				console.log('response');
+			this.$router.push('/votegif');
 			})
 			.catch(function (error) {
 				console.log('error');

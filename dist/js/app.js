@@ -51,9 +51,12 @@ var app = new Vue({
 		},
 
 		selectedGif: function selectedGif(giphyURL) {
+			var _this2 = this;
+
 			console.log("user selected gif");
 			axios.post('http://circuslabs.net:6432/submission', { giphyURL: giphyURL, username: this.username }).then(function (response) {
 				console.log('response');
+				_this2.$router.push('/votegif');
 			}).catch(function (error) {
 				console.log('error');
 			});
