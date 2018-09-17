@@ -9,7 +9,7 @@ var router = new VueRouter({
 		component: SearchGifComponent
 	}, {
 		path: '/votegif',
-		component: VoteGifComponent.js
+		component: VoteGifComponent
 	}, {
 		path: '/winnergif',
 		component: WinnerComponent
@@ -52,7 +52,6 @@ var app = new Vue({
 
 		selectedGif: function selectedGif(giphyURL) {
 			console.log("user selected gif");
-
 			axios.post('http://circuslabs.net:6432/submission', { giphyURL: giphyURL, username: this.username }).then(function (response) {
 				console.log('response');
 			}).catch(function (error) {

@@ -58,11 +58,6 @@ table {
 	border-spacing: 0;
 }
 
-@font-face {
-	font-family: CS Sandreas;
-	src: url("CS-Sandreas-Outline.otf");
-}
-
 * {
 	box-sizing: border-box;
 }
@@ -73,7 +68,6 @@ body {
 
 .title {
 	text-align: center;
-	font-family: CS Sandreas;
 	animation: blinker 2s linear infinite;
 	font-size: 4em;
 }

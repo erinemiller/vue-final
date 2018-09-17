@@ -4,6 +4,7 @@ let SearchGifComponent = Vue.component('searchgif', {
             searchText: '',
             gifData: null,
             giphyURL: '',      
+            clickGif: false
         }
     },
     
@@ -27,14 +28,27 @@ let SearchGifComponent = Vue.component('searchgif', {
                     console.warn(error);
                 });
           },
-          submitGif: function(giphyURL) {
+        selectGif: function selectGif(giphyURL) {
+			// console.log('clicked', giphyLink);
+
+			this.selectGif = true;
+			this.$emit("pick-the-giphy", giphyURL);
+
+			document.querySelectorAll(".active-giphy").forEach(function (activeGiphy) {
+				activeGiphy.classList.remove(".active-giphy");
+			});
+
+			event.target.classList.add("active-giphy");
+        },
+        submitGif: function(giphyURL) {
 			console.log('submit gif');
-			this.$emit('submittedgif', giphyURL);
+            this.$emit('submitgif', giphyURL);
+            this.$router.push("/votegif");
         }
         
         
           
-    },
+    }, 
 
 
 
@@ -42,7 +56,7 @@ let SearchGifComponent = Vue.component('searchgif', {
     template:
         `
             <div>
-                <router-link tag="button" to="/"><a> &gt; BACK </a></router-link>
+                <router-link tag="button" to="/"><a> BACK </a></router-link>
 
                 <div class="blink-me"><p>Hi, {{ username }} </p></div>
 
@@ -50,17 +64,17 @@ let SearchGifComponent = Vue.component('searchgif', {
 
                 <label><input v-model="searchText" placeholder="search gifs"></label>
                 
-                <ul class="giphys">
+               <div> <ul class="giphys">
                     <li v-for="giphy in gifData">
                     <router-link to="/votegif">
                          <img @click="gifSearch(giphy.images.original.url)" alt="" v-bind:src="giphy.images.original.url" link-to="/votegif">
                     </router-link>
                     </li>
                 </ul>
-
+                <button @click="selectGif" :disabled="!searchText || !submitGif" to="/votegif">Submit</button>
                
                   
-                </div> </p>
+                </div> 
                 
             </div>
         `

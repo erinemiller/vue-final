@@ -5,7 +5,7 @@ ERIN MILLER - VUE FINAL PROJECT
 */
 
 @import 'reset';
-@font-face { font-family: CS Sandreas; src: url('CS-Sandreas-Outline.otf'); } 
+// @font-face { font-family: CS Sandreas; src: url('CS-Sandreas-Outline.otf'); } 
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i');
 * {
 	box-sizing: border-box;
@@ -17,7 +17,7 @@ body {
 
 .title {
 	text-align: center;
-	font-family: CS Sandreas;
+	// font-family: CS Sandreas;
 	animation: blinker 2s linear infinite;
 	font-size: 4em;
 }
@@ -72,7 +72,7 @@ input {
 
 
 
-.btn-container {
+.btn-container  {
 	margin: 0 auto;
 	display: flex;
 	justify-content: center;
