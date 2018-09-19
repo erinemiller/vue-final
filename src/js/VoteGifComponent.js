@@ -35,7 +35,7 @@ let VoteGifComponent = Vue.component('votegif', {
             <ul class="votes">
 				<li v-for="(submission, index) in status.submissions">
 					<img @click="userVotes(index)" :src="submission.giphyURL">
-					{{submission.username}} {{submission.userVotes.length}} votes
+					{{submission.username}} {{submission.upvote.length}} votes
 				</li>
 			</ul>
 
